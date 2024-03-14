@@ -1,0 +1,2 @@
+CREATE TABLE "public"."users" ("u_id" uuid NOT NULL DEFAULT gen_random_uuid(), "u_username" text, "u_email_id" text NOT NULL, "u_password" text NOT NULL, "u_mobile_number" integer NOT NULL, "u_cognito_id" uuid NOT NULL, "u_address" text NOT NULL, "u_first_name" text, "u_last_name" text, "u_date_of_birth" date, PRIMARY KEY ("u_cognito_id") , UNIQUE ("u_email_id"));
+CREATE EXTENSION IF NOT EXISTS pgcrypto;

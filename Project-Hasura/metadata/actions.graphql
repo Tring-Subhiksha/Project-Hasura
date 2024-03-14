@@ -1,0 +1,101 @@
+type Mutation {
+  ForgotPassword(
+    input: ForgotPasswordInput!
+  ): ForgotPasswordOutput
+}
+
+type Mutation {
+  PasswordVerify(
+    input: PasswordVerifyInput!
+  ): PasswordVerifyOutput
+}
+
+type Mutation {
+  ResendCode(
+    input: ResendInput!
+  ): ResendOutput
+}
+
+type Mutation {
+  SignIn(
+    input: SignInInput!
+  ): SignInOutput
+}
+
+type Mutation {
+  SignUp(
+    input: SignUpInput!
+  ): SignUpOutput
+}
+
+type Mutation {
+  verifyCode(
+    input: verifyCodeInput!
+  ): verifyCodeOuput
+}
+
+input SampleInput {
+  username: String!
+  password: String!
+  email: String!
+}
+
+input SignUpInput {
+  email: String!
+  username: String!
+  password: String!
+}
+
+input verifyCodeInput {
+  email: String!
+  code: String!
+}
+
+input ResendInput {
+  email: String!
+}
+
+input SignInInput {
+  email: String!
+  password: String!
+}
+
+input ForgotPasswordInput {
+  email: String!
+}
+
+input PasswordVerifyInput {
+  email: String!
+  password: String!
+  code: String!
+}
+
+type SampleOutput {
+  result: String!
+}
+
+type SignUpOutput {
+  result: String!
+}
+
+type verifyCodeOuput {
+  result: String!
+}
+
+type ResendOutput {
+  result: String!
+}
+
+type SignInOutput {
+  accessToken: String!
+  idToken: String!
+}
+
+type ForgotPasswordOutput {
+  result: String!
+}
+
+type PasswordVerifyOutput {
+  result: String!
+}
+
