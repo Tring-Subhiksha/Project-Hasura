@@ -1,6 +1,83 @@
-actions: []
+actions:
+  - name: ForgotPassword
+    definition:
+      kind: synchronous
+      handler: https://guppy-vital-evidently.ngrok-free.app/api/forgotpassword
+      forward_client_headers: true
+      request_transform:
+        method: POST
+        query_params: {}
+        template_engine: Kriti
+        version: 2
+  - name: PasswordVerify
+    definition:
+      kind: synchronous
+      handler: https://guppy-vital-evidently.ngrok-free.app/api/passwordverify
+      forward_client_headers: true
+      request_transform:
+        method: POST
+        query_params: {}
+        template_engine: Kriti
+        version: 2
+  - name: ResendCode
+    definition:
+      kind: synchronous
+      handler: https://guppy-vital-evidently.ngrok-free.app/api/resendcode
+      forward_client_headers: true
+      request_transform:
+        method: POST
+        query_params: {}
+        template_engine: Kriti
+        version: 2
+  - name: SignIn
+    definition:
+      kind: synchronous
+      handler: https://guppy-vital-evidently.ngrok-free.app/api/signin
+      forward_client_headers: true
+      request_transform:
+        method: POST
+        query_params: {}
+        template_engine: Kriti
+        version: 2
+    permissions:
+      - role: anonymous
+  - name: SignUp
+    definition:
+      kind: synchronous
+      handler: https://guppy-vital-evidently.ngrok-free.app/api/register
+      forward_client_headers: true
+      timeout: 300
+      request_transform:
+        method: POST
+        query_params: {}
+        template_engine: Kriti
+        version: 2
+  - name: verifyCode
+    definition:
+      kind: synchronous
+      handler: https://guppy-vital-evidently.ngrok-free.app/api/verifyCode
+      forward_client_headers: true
+      request_transform:
+        method: POST
+        query_params: {}
+        template_engine: Kriti
+        version: 2
 custom_types:
-    enums: []
-    input_objects: []
-    objects: []
-    scalars: []
+  enums: []
+  input_objects:
+    - name: SampleInput
+    - name: SignUpInput
+    - name: verifyCodeInput
+    - name: ResendInput
+    - name: SignInInput
+    - name: ForgotPasswordInput
+    - name: PasswordVerifyInput
+  objects:
+    - name: SampleOutput
+    - name: SignUpOutput
+    - name: verifyCodeOuput
+    - name: ResendOutput
+    - name: SignInOutput
+    - name: ForgotPasswordOutput
+    - name: PasswordVerifyOutput
+  scalars: []

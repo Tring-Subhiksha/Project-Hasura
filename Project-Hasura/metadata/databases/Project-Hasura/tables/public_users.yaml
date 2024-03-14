@@ -1,0 +1,23 @@
+table:
+  name: users
+  schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - u_date_of_birth
+        - is_confirmed
+        - u_address
+        - u_cognito_id
+        - u_email_id
+        - u_first_name
+        - u_last_name
+        - u_mobile_number
+        - u_password
+        - u_username
+        - u_id
+      filter:
+        _and:
+          - u_cognito_id:
+              _eq: X-Hasura-User-Id
+    comment: ""
